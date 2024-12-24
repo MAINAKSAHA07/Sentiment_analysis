@@ -1,0 +1,11 @@
+This is an augmented version of FER-2013 facial emotion dataset where each image is grayscale .jpg image of dimension (48,48).
+
+It contains total 7 emotions. They are ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral'].
+
+The original dataset had non-uniform image distribution over different classes (of emotions).
+
+So, by random image augmentation, here I have created a uniform dataset, where the image distrubution over different classes are uniform.
+
+Each class of Train Set has 8000 images.
+Each class of Validation Set has 1000 images.
+Each class of Test Set has 1000 images.
