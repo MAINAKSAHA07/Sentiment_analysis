@@ -18,16 +18,26 @@ __MACOSX/                               # Auxiliary macOS system files (can be i
 
 Ensure you have the following dependencies installed:
 
-- Python 3.7 or later
+- Python 3.10 or later
 - TensorFlow
 - Keras
 - NumPy
 - Matplotlib
 - OpenCV (cv2)
 
-You can install the required libraries using:
+It is recommended to use a virtual environment to manage dependencies:
 
 ```bash
+# Create a virtual environment
+python3.10 -m venv venv
+
+# Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install the required libraries
 pip install -r requirements.txt
 ```
 
@@ -35,22 +45,31 @@ pip install -r requirements.txt
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your_username/sentiment_analysis.git
-   cd sentiment_analysis/Sentiment
-   ```
+```bash
+git clone https://github.com/your_username/sentiment_analysis.git
+cd sentiment_analysis/Sentiment
+```
 
-2. Run the Python script:
+2. Activate the virtual environment:
 
-   ```bash
-   python emotion_detection.py
-   ```
+```bash
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+```
 
-   This script uses the pre-trained model `emotion_detection_model.h5` to predict emotions from the input dataset or real-time data.
+3. Run the Python script:
 
-3. (Optional) Customize the dataset:
+```bash
+python emotion_detection.py
+```
 
-   Replace or add images to the `FER2013_7emotions_Uniform_Augmented_Dataset/` directory to train or test the model on custom data.
+This script uses the pre-trained model `emotion_detection_model.h5` to predict emotions from the input dataset or real-time data.
+
+(Optional) Customize the dataset:
+
+Replace or add images to the `FER2013_7emotions_Uniform_Augmented_Dataset/` directory to train or test the model on custom data.
 
 ## Dataset
 
@@ -74,10 +93,10 @@ Contributions are welcome! Feel free to submit a pull request or open an issue i
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
 
-- [FER2013 Dataset](https://www.kaggle.com/datasets/msambare/fer2013) for providing the foundational data.
+- FER2013 Dataset for providing the foundational data.
 - Open-source contributors for their tools and libraries.
 
