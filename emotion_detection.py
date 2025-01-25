@@ -39,6 +39,9 @@ while True:
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
+    # Get the number of faces detected
+    num_faces = len(faces)
+
     # Loop through each detected face
     for (x, y, w, h) in faces:
         # Crop the face region from the frame
@@ -69,6 +72,9 @@ while True:
 
         # Display the predicted emotion above the rectangle
         cv2.putText(frame, predicted_emotion[0], (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+
+    # Display the number of detected faces on the screen
+    cv2.putText(frame, f"Faces: {num_faces}", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
     # Display the frame with the emotion label
     cv2.imshow('Emotion Detection', frame)
